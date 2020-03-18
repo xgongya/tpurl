@@ -7,8 +7,12 @@
              return unescape(r[2]);
           }
           return null;
-  }
-// 这样调用：
-alert(getQueryString("toon"));
+    }
+
+    var url = getQueryString("toon");
+    if(!url){
+        return
+    }
+    window.location.href = url
 
 </script>
