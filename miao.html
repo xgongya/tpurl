@@ -1,0 +1,64 @@
+<html>
+    <header>
+        <!-- 页面编码 -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="x-dns-prefetch-control" content="on">
+        <meta http-equiv="Expires" content="0">
+        <!-- 宽度默认100%全屏宽度，禁止手指缩放，初始缩放值1.0 -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="HandheldFriendly" content="true">
+        <meta name="x5-orientation" content="portrait">
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+            }
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                overflow-x : hidden;  
+                overflow-y : hidden;   
+            }
+        </style>
+    </header>
+    
+    <body>
+        <iframe id="iframe1" runat="server" frameborder=0 src=""  scrolling="no">
+
+        </iframe>
+    </body>
+      
+<html>
+
+<script>
+  function getQueryString(name) {
+          var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+          var r = window.location.search.substr(1).match(reg);
+
+          if (r != null) {
+             return unescape(r[2]);
+          }
+          return null;
+    }
+
+    window.onload = function(){
+        var url = getQueryString("toon");
+        if(url){
+            //window.location.href = url 
+            var oIframe = document.getElementById('iframe1');
+            //document.getElementById("aaa").src='http://www.sohu.com' 
+
+            oIframe.src = url
+        }    
+    }
+  
+
+   
+   
+
+</script>
